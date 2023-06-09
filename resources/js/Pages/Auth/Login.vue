@@ -27,6 +27,11 @@ const submit = () => {
         onFinish: () => form.reset('password'),
     });
 };
+
+  
+const redirectToRegister = () => {
+    window.location.href = '/register'
+}
 </script>
 
 <template>
@@ -83,6 +88,10 @@ const submit = () => {
 
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
+                </PrimaryButton>
+
+                <PrimaryButton :type="'button'" @click="redirectToRegister()" class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Register
                 </PrimaryButton>
             </div>
         </form>
